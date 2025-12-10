@@ -1,0 +1,110 @@
+.technology-section {
+  background: var(--secondary);
+  color: var(--primary);
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+/* container */
+.technology-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* text content */
+.technology-content {
+  flex: 1 1 45%;
+}
+
+.technology-content h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.tech-intro {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--muted-foreground, #5a6b8a);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* bullet list */
+.tech-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.8;
+}
+
+.tech-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* image area */
+.technology-image {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technology-image img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================================= */
+/* -------------------- Responsive tweaks ------------------- */
+/* ========================================================= */
+
+/* --- Tablets --- */
+@media (max-width: 900px) {
+  .technology-wrapper {
+    flex-direction: column-reverse; /* image below text for flow */
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .technology-content {
+    flex: 1 1 100%;
+  }
+
+  .technology-image {
+    flex: 1 1 100%;
+  }
+
+  .technology-image img {
+    max-width: 420px;
+  }
+
+  .tech-list {
+    text-align: left;
+    display: inline-block; /* centers list block in section */
+  }
+}
+
+/* --- Small phones --- */
+@media (max-width: 480px) {
+  .technology-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .tech-intro {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .tech-list li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,61 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+}
+
+/* X‑ray scan reveal – single fast pass */
+.xray-loader {
+  background: #0e1835;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* faint base text */
+.xray-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* revealing white text */
+.xray-text::after {
+  content: 'Perfect Digital Imaging';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+  animation: revealText 1s ease forwards;
+}
+
+@keyframes revealText {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* single quick beam sweep */
+.xray-scan-line {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(206,17,38,0) 0%,
+    rgba(206,17,38,0.6) 50%,
+    rgba(206,17,38,0) 100%
+  );
+  animation: sweep 1s linear forwards;
+}
+
+@keyframes sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}

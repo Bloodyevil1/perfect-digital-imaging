@@ -1,0 +1,144 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;           /* ideal centering for mobile */
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* dark overlay for readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* inner container */
+.hero .container {
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 clamp(1rem, 5vw, 2rem);
+  margin: 0 auto;
+}
+
+/* main content area */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;                 /* slightly wider for better text flow */
+  text-align: center;
+  padding-top: 5rem;
+  margin: 0 auto;
+}
+
+/* heading & paragraph */
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.6rem, 6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.5px;
+  word-wrap: break-word;
+}
+
+.hero p {
+  font-size: clamp(0.95rem, 3.2vw, 1.1rem);
+  line-height: 1.7;
+  opacity: 0.95;
+  margin: 0 auto 1.8rem;
+  max-width: 95%;                   /* gives text breathing room */
+  text-align: center;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* call-to-action button */
+.btn-know-more {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;             /* pill style for mobile */
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 10px rgba(206, 17, 38, 0.4);
+  transition: all 0.3s ease;
+  width: auto;
+  min-width: 160px;
+  max-width: 220px;
+  text-align: center;
+}
+
+.btn-know-more:hover,
+.btn-know-more:active {
+  background: #ffffff;
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(206, 17, 38, 0.45);
+}
+
+/* ========================================================= */
+/* ---------- Responsive / layout adjustments --------------- */
+/* ========================================================= */
+
+/* tablets and up */
+@media (min-width: 768px) {
+  .hero {
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    text-align: left;
+    max-width: 60%;
+    padding-top: 6rem;
+    margin-left: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .hero p {
+    text-align: left;
+    max-width: 85%;
+    margin-left: 0;
+  }
+
+  .btn-know-more {
+    border-radius: 8px;
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* large tablets / desktops */
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 50%;
+  }
+}
+
+/* ultra‑wide monitors */
+@media (min-width: 1600px) {
+  .hero-content {
+    max-width: 45%;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}

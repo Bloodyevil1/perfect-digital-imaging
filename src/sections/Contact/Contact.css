@@ -1,0 +1,159 @@
+.contact-section {
+  background: #fff;
+  color: var(--primary);
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: var(--muted-foreground, #5a6b8a);
+}
+
+/* wrapper for form + map side-by-side */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* form styling */
+.contact-form {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border, #ddd);
+  background: var(--secondary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.btn-submit {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.9rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #b80f1f;
+}
+
+/* map area */
+.contact-map {
+  flex: 1 1 45%;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* branch cards grid */
+.contact-locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.location-box {
+  background: var(--secondary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.location-box:hover {
+  transform: translateY(-4px);
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.location-box.active {
+  border: 2px solid var(--accent);
+  background: #ffffff;
+}
+
+.location-box h4 {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.location-box p {
+  font-size: 0.95rem;
+  color: var(--primary);
+  line-height: 1.5;
+}
+
+/* ========================================================= */
+/* -------------------- Responsive tweaks ------------------- */
+/* ========================================================= */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-map {
+    flex: 1 1 100%;
+  }
+
+  .contact-map iframe {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-subtitle {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

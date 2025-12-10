@@ -1,0 +1,52 @@
+.call-now {
+  position: fixed;
+  bottom: 100px;           /* sits just above scroll-top */
+  right: 24px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 3000;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.call-now:hover {
+  background: #b80f1f;
+  transform: translateY(-3px);
+}
+
+.call-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #ffffff;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.call-now:hover .call-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .call-tooltip {
+    display: none;
+  }
+}

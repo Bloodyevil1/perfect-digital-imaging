@@ -1,0 +1,143 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  padding: 0.6rem 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar--scrolled {
+  background: #ffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---- Brand (logo + text) ---- */
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.logo {
+  height: 58px;
+  width: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.brand-link:hover .logo {
+  filter: drop-shadow(0 0 6px rgba(206, 17, 38, 0.45));
+}
+
+.brand-name {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.25rem;
+  letter-spacing: 0.25px;
+  cursor: pointer;
+}
+
+/* ---- Desktop navigation ---- */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  color: var(--primary);
+  margin-left: 28px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav-item:hover {
+  color: var(--accent);
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* ---- Menu toggle (hamburger) ---- */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 2100;
+}
+
+/* ---- Mobile menu ---- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-right.open {
+    transform: translateX(0);
+  }
+
+  .nav-item {
+    font-size: 1.1rem;
+    margin-left: 0;
+  }
+
+  /* Dimmed backdrop */
+  body.menu-open::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1500;
+  }
+
+  .brand-name {
+    display: none;
+  }
+}

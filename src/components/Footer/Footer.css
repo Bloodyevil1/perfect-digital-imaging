@@ -1,0 +1,155 @@
+.footer {
+  background: var(--primary);
+  color: #fff;
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* thin accent bar */
+.footer-accent {
+  background: var(--accent);
+  height: 3px;
+  width: 100%;
+}
+
+/* main area */
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;          /* very compact vertical space */
+}
+
+/* brand */
+.footer-brand {
+  flex: 1 1 220px;
+}
+
+.footer-brand h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: #dfe7f1;
+  line-height: 1.4;
+}
+
+/* links */
+.footer-links {
+  flex: 1 1 140px;
+}
+
+.footer-links h4 {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.2rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+/* contact */
+.footer-contact {
+  flex: 1 1 180px;
+}
+
+.footer-contact h4 {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-contact p {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: #dfe7f1;
+  line-height: 1.4;
+}
+
+/* socials */
+.socials {
+  margin-top: 0.3rem;
+}
+
+.socials a {
+  color: #fff;
+  margin-right: 0.4rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* bottom strip */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0;          /* minimal padding */
+  font-size: 0.8rem;
+  color: #dfe7f1;
+}
+
+/* =================================== */
+/* responsive tweaks                   */
+/* =================================== */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.8rem 0;
+    gap: 0.6rem;
+  }
+
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 100%;
+  }
+
+  .socials a {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-brand h3 {
+    font-size: 1rem;
+  }
+  .footer-brand p,
+  .footer-contact p,
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+  .footer-bottom {
+    padding: 0.3rem 0;
+    font-size: 0.75rem;
+  }
+}
